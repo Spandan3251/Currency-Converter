@@ -49,7 +49,7 @@ const updateExchangeRate = async () =>{
     let data = await response.json();
 
     let rate = data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
-    let finalAmount = amtVal * rate;
+    let finalAmount = Math.round(amtVal * rate * 100)/100.0;
 
     // console.log(`Rate: ${rate}`);
     // console.log(`Converted Amount: ${finalAmount}`);
